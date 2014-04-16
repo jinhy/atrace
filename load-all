@@ -1,0 +1,6 @@
+#!/bin/bash
+python load_glibc_linuxman.py
+python crawler_gnulib.py
+python load_lsb.py
+python load_pre.py
+python load_osv.py

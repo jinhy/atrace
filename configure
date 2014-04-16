@@ -1,0 +1,25 @@
+#!/bin/bash
+TTDIR="/usr/local"
+TTFILE="$TTDIR/tt/data/tmp"
+cd ..
+cp -R tt $TTDIR
+cd "$TTDIR/tt"
+
+cd pks/xlwt
+python setup.py install
+cd ../xlrd
+python setup.py install
+cd ../beautifulsoup4
+python setup.py install
+cd ../..
+rm -rf pks
+
+touch $TTFILE
+chmod 777 atrace
+grep -q '/usr/local/tt' /etc/profile
+if [ $? != 0 ];then
+    echo 'PATH=$PATH:/usr/local/tt'>>/etc/profile
+    echo 'export PATH'>>/etc/profile
+    source /etc/profile
+    echo 'add path to /etc/profile'
+fi

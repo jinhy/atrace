@@ -1,0 +1,33 @@
+包内数据库已经有要用的数据，在data目录下，是正式数据库
+包目录下data.db是上次实现的工具中的数据
+ab保存linux man 页面的数据，就一页，懒得写爬虫，就复制保存了
+atrace是安装后要用的命令
+configure实现安装，包括创建目录，复制文件，安装python包，加path等操作，没有prefix功能
+Book1.xls保存上次我手动搞的OSv的syscall
+crawler_gnulib.py去爬取gnulib的函数
+ctl.py是各种功能的python实现
+gnu保存glibc的数据
+lib保存python要用到的库
+load-all会把所有数据导入到数据库中
+load_glibc_linuxman.py 导入glibc和syscall的数据
+load_lsb导入linux LSB的数据
+load_osv导入OSV数据
+load_pre导入Book1的数据
+lsb保存linux LSB的数据
+pks是python要用到的包的安装文件
+static是服务器要用到的模板和文件
+
+
+用法：
+syscall
+	atrace [-i infile][-o outfile][-l loadfile][-e exortfile] command [arg1 arg2 ...]
+libc
+	atrace [-l loadfile][-e exportfile][-o outfile] -f 1.so [2.so 3.so ...]
+server 
+	atrace
+-i指定输入文件，txt格式或者xls格式
+-o指定输出文件，txt，xls，html
+-l指定导入文件，格式同-i
+-e指定到处文件，格式同-o
+-f指定输入的文件，要放到最后一个，可以接多个
+
