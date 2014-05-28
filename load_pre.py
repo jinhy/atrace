@@ -10,7 +10,7 @@ DB='data/data.db'
 conn=sqlite3.connect(DB)
 db = conn.cursor()
 print 'loading pre data...'
-w=open_workbook('Book1.xlsx')
+w=open_workbook('pre_data.xlsx')
 cc=0
 rs=w.sheet_by_index(3)
 for i in range(1,rs.nrows):
